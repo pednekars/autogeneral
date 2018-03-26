@@ -32,7 +32,7 @@ public class SwaggerConfig {
                 .description("Spring REST Swagger Autogeneral")
                 .contact("Shankar")
                 .license("Apache License Version 2.0")
-                .licenseUrl("https://github.com/perscrew/pet-rest-api")
+                .licenseUrl("https://github.com/pednekars/autogeneral")
                 .version("1.0")
                 .build();
     }
