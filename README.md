@@ -12,7 +12,9 @@ An h2 in memory database has been used to store the AutoGeneral data.
 
 * Clone the github repository :
 ```
-git clone https://github.com/perscrew/pet-rest-api.git
+git clone https://github.com/pednekars/autogeneral.git
+
+Autogeneral is trade mark of Autogeneral. Only good scenarios are implemented
 
 ```
 
@@ -27,7 +29,7 @@ mvn clean install -DskipTests
 ```
 
 ## 2. Set up server port and database configuration
-The configuration file [application.properties](/pet-rest-api-core/src/main/resources/application.properties) allows you to change default parameters.
+The configuration file [application.properties](/autogeneral-rest-api-core/src/main/resources/application.properties) allows you to change default parameters.
 
 You can set-up the server port :
 ```
@@ -60,24 +62,16 @@ Ex :
 
 ## 3. Launch the REST server
 
-* Run mvn spring-boot:run in the pet-rest-api-web module to launch spring-boot server (a Tomcat is bundled by default)
+* Run mvn spring-boot:run in the autogeneral-rest-api-web module to launch spring-boot server (a Tomcat is bundled by default)
 ```
-cd pet-rest-api-web
+cd autogeneral-rest-api-web
 mvn spring-boot:run
 ```
-Spring boot generates a single jar that includes everything. You could also run the app like this :
-```
-java -jar pet-rest-api-web/target/pet-rest-api-web-0.0.1-SNAPSHOT.jar
-```
+
 
 ## 4. REST services documentation (Swagger)
 The Rest services are documented with the Swagger api documentation available on these URL, once you run the server : [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
 
-![swagger rest api](/docs/pet_shop_rest_api.png)
-
-You can also test directly the service with the swagger ui :
-
-![swagger rest api](/docs/pet_shop_rest_api_test.png)
 
 ## 5. Run test units
 To run only the test units run mvn test :
@@ -102,4 +96,9 @@ You will find below the different third party libraries used in the project.
 - Add OAUTH2 or JWT security to retrieve a token for the frontend. The library spring-security could be used.
 - Use Jpa transactions to handle concurrency
 - Add a service layer to wrap dao call. Currently the dao are called from the rest controller.
+- Add validation scenario
+-- Add wiremock test
+
+
+
 
