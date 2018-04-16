@@ -3,16 +3,16 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>fr.autogeneral.rest.api</groupId>
-    <artifactId>autogeneral-rest-api-parent</artifactId>
+    <groupId>fr.mycompany.rest.api</groupId>
+    <artifactId>mycompany-rest-api-parent</artifactId>
 
     <packaging>pom</packaging>
     <version>0.0.1-SNAPSHOT</version>
-    <name>autogeneral-rest-api-parent</name>
+    <name>mycompany-rest-api-parent</name>
 
     <modules>
-        <module>autogeneral-rest-api-core</module>
-        <module>autogeneral-rest-api-web</module>
+        <module>mycompany-rest-api-core</module>
+        <module>mycompany-rest-api-web</module>
     </modules>
 
     <parent>

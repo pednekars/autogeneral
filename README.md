@@ -1,10 +1,20 @@
-# AutoGeneral REST API
+# mycompany REST API
 
 
-This project exposes some REST CRUD service for a AutoGeneral.
+This project exposes some REST CRUD service for a mycompany.
 It demonstrates the use of Spring-boot & Java 8.
-An h2 in memory database has been used to store the AutoGeneral data.
+An h2 in memory database has been used to store the mycompany data.
 
+The restful services provide following functionality
+
+validateBrackets of TaskController.java checks whether brackets are valid.
+Eg {[]} is a valid bracket combination
+
+Second is ToDoItemCOntroller which is used to store and retrieve todo
+A ToDo will contain following things
+ToDoItem text a String value of ToDoItem eg: "I have an appointment"
+isCompleted to indicate whether todoitem is completed or not
+ 
 
 **Important** : The project requires maven 3.x and a Java 8 jdk.
 
@@ -12,15 +22,15 @@ An h2 in memory database has been used to store the AutoGeneral data.
 
 * Clone the github repository :
 ```
-git clone https://github.com/pednekars/autogeneral.git
+git clone https://github.com/pednekars/mycompany.git
 
-Autogeneral is trade mark of Autogeneral. Only good scenarios are implemented
+mycompany is trade mark of mycompany. 
 
 ```
 
 * Launch mvn clean install to build the project
 ```
-mvn clean install
+mvn clean install -DskipTests
 ```
 By default mvn clean install runs also the test units included in the project.
 In the case of some unit test failed, you can run the following command :
@@ -29,7 +39,7 @@ mvn clean install -DskipTests
 ```
 
 ## 2. Set up server port and database configuration
-The configuration file [application.properties](/autogeneral-rest-api-core/src/main/resources/application.properties) allows you to change default parameters.
+The configuration file [application.properties](/mycompany-rest-api-core/src/main/resources/application.properties) allows you to change default parameters.
 
 You can set-up the server port :
 ```
@@ -62,12 +72,31 @@ Ex :
 
 ## 3. Launch the REST server
 
-* Run mvn spring-boot:run in the autogeneral-rest-api-web module to launch spring-boot server (a Tomcat is bundled by default)
+* Run mvn spring-boot:run in the mycompany-rest-api-web module to launch spring-boot server (a Tomcat is bundled by default)
 ```
-cd autogeneral-rest-api-web
+cd mycompany-rest-api-web
 mvn spring-boot:run
-```
 
+To test do following
+Open Postman
+Run following
+To test valid brackets run following code
+http://localhost:8080/tasks/validateBrackets?input=%7B%7B%7B%7B%7B%7B
+
+To test to do item run following
+http://localhost:8080/todo (http method = post)
+Method body is as below and is of type json
+ {
+"id":1,
+"text": "Hi how are you?.",
+"isCompleted": "false",
+"createdAt": "2017-10-13T01:50:58.735Z"
+}
+
+
+http://localhost:8080/todo/1 (http method = post). This will show what is already posted in previous url
+```
+Similarly you can try patch method
 
 ## 4. REST services documentation (Swagger)
 The Rest services are documented with the Swagger api documentation available on these URL, once you run the server : [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)

@@ -212,7 +212,7 @@
 						"description": "base url of remote API to test",
 						"required": true,
 						"type": "string",
-						"example": "https://join.autogeneral.com.au/test/1.0/"
+						"example": "https://join.mycompany.com.au/test/1.0/"
 					}
 				],
 				"responses": {
